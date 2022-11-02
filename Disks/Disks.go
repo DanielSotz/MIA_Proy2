@@ -23,10 +23,10 @@ import (
 
 	"os/exec"
 
-	"../FormatP"
+	"proyecto2/inicio/FormatP"
 )
 
-///Master Boot Record *  175 Bytes
+// /Master Boot Record *  175 Bytes
 type MBR struct {
 	Mbr_tamanio uint64 // 8 bytes
 	//Mbr_fecha_creacion time.Time //24 bytes
@@ -41,8 +41,8 @@ type MBR struct {
 	Mbr_Particiones [4]Particion
 }
 
-///Extended Boot Record
-//42 bytes
+// /Extended Boot Record
+// 42 bytes
 type EBR struct {
 	Part_status byte     // 1 bytes
 	Part_fit    byte     // 1 bytes
@@ -247,7 +247,7 @@ func CreateDisk(size_d uint64, path_d string, nombre string, unidad_d byte) {
 
 }
 
-////PARTICIONES 35 bytes
+// //PARTICIONES 35 bytes
 type Particion struct {
 	Part_status byte
 	Part_type   byte
@@ -442,7 +442,7 @@ func Print_Contenido(arr_file_read []string, idvol string) {
 	//Leyendo_Recorrido(file *os.File, pos_AVD int64, var_directorios []string, i int64, sB SuperB, Contenido_ar string, p byte, tipo_mk byte)
 }
 
-////cambiar nombre
+// //cambiar nombre
 func Cambiar_Name(path_ac string, new_name string, idvol string) {
 
 	exis, path_disco, inicia_part, _ := GetPart_montado(idvol)
@@ -2135,7 +2135,7 @@ func NewPartEBR(file *os.File, iniciar_particion uint64, status byte, fit byte, 
 
 }
 
-//file, pos_ebr_ant, ebr_anterior,  deletp
+// file, pos_ebr_ant, ebr_anterior,  deletp
 func ActualizarEBR_par(file *os.File, iniciar_ebr uint64, ebr_anterior EBR, deletp string, name_byte [16]byte) {
 
 	/*posicionandome en el primer ebr de la extendida*/

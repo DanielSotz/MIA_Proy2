@@ -8,7 +8,7 @@ import (
 	"strings"
 
 	/*locales*/
-	"./Disks"
+	"proyecto2/inicio/Disks"
 	//"./FormatP"
 
 	//
@@ -153,7 +153,9 @@ func Interprete_back() {
 func Interprete() {
 
 	for true {
-
+		fmt.Println("--- MIA PROYECTO 2---")
+		fmt.Println("--- Daniel Sotz A.---")
+		fmt.Println("---   201430496   ---")
 		fmt.Println("---Ingrese comando---")
 		reader := bufio.NewReader(os.Stdin)
 		lin_coman, _ := reader.ReadString('\n')
@@ -325,7 +327,7 @@ func ejecutandoLineComandos(lin_coman []string) {
 	}
 }
 
-////Renombrar
+// //Renombrar
 func REM(comandos []string) {
 
 	var path string
@@ -539,7 +541,7 @@ func CAT(comandos []string) {
 
 }
 
-//creando carpetas
+// creando carpetas
 func MKDIR(comandos []string) {
 	var path string
 	var id string
@@ -662,7 +664,7 @@ func MKDIR(comandos []string) {
 	}
 }
 
-///editar archivo
+// /editar archivo
 func EDIT(comandos []string) {
 	var size int64
 	var path string
